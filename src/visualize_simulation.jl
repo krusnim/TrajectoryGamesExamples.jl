@@ -32,7 +32,7 @@ end
 function visualize_players!(
     axis,
     players;
-    player_colors = range(colorant"red", colorant"blue", length = blocksize(players[], 1)),
+    player_colors = range(colorant"red", colorant"green", length = blocksize(players[], 1)),
 )
     for player_i in 1:blocksize(players[], 1)
         player_color = player_colors[player_i]
@@ -44,7 +44,7 @@ end
 function visualize_obstacle_bounds!(
     axis,
     players;
-    player_colors = range(colorant"red", colorant"blue", length = blocksize(players[], 1)),
+    player_colors = range(colorant"red", colorant"green", length = blocksize(players[], 1)),
     obstacle_radius = 1.0,
 )
     for player_i in 1:blocksize(players[], 1)
@@ -63,7 +63,7 @@ end
 function visualize_targets!(
     axis,
     targets;
-    player_colors = range(colorant"red", colorant"blue", length = blocksize(targets[], 1)),
+    player_colors = range(colorant"red", colorant"green", length = blocksize(targets[], 1)),
     marker = "+",
 )
     for player_i in 1:blocksize(targets[], 1)
@@ -81,12 +81,12 @@ function visualize_sim_step(
     xlims = (-5, 5),
     ylims = (-5, 5),
     aspect = 1,
-    player_colors = range(colorant"red", colorant"blue", length = num_players(game)),
+    player_colors = range(colorant"red", colorant"green", length = num_players(game)),
     player_names = ["Pursuer", "Evader"],
     weight_offset = 0.0,
     heading = "",
     show_legend = false,
-    show_turn = false,
+    show_turn = true,
 )
     s = Makie.Observable(step)
 

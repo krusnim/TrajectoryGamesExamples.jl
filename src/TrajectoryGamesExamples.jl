@@ -8,6 +8,7 @@ using TrajectoryGamesBase:
     TimeSeparableTrajectoryGameCost,
     TrajectoryGame,
     ZeroSumCostStructure,
+    GeneralSumCostStructure,
     num_players,
     time_invariant_linear_dynamics,
     visualize!
@@ -36,5 +37,8 @@ export animate_sim_steps,
 # games
 include("two_player_meta_tag.jl")
 export two_player_meta_tag
+
+include("three_player_meta_tag.jl")
+export three_player_meta_tag
 
 end
