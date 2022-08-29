@@ -31,6 +31,6 @@ function three_player_meta_tag(;
         TimeSeparableTrajectoryGameCost(stage_cost, reducer, GeneralSumCostStructure(), 1.0)
     end
     dynamics = ProductDynamics([dynamics for _ in 1:3] |> Tuple)
-    env = PolygonEnvironment([[0; 0], [100; 0], [100; 4], [0; 4]])
+    env = PolygonEnvironment(n_environment_sides, environment_radius)
     TrajectoryGame(dynamics, cost, env, coupling_constraints)
 end
